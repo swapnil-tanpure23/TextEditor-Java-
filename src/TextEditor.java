@@ -108,6 +108,14 @@ public class TextEditor implements ActionListener {
             }
         }
 
+        if(actionEvent.getSource()==savefile){
+            JFileChooser fileChoosen = new JFileChooser("c:");
+            int choosenOption = fileChoosen.showSaveDialog(null);
+            if(choosenOption===JFileChooser.APPROVE_OPTION){
+                File
+            }
+        }
+
     }
     public static void main(String[] args) {
         TextEditor texteditor = new TextEditor();

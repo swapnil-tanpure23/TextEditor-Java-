@@ -111,8 +111,17 @@ public class TextEditor implements ActionListener {
         if(actionEvent.getSource()==savefile){
             JFileChooser fileChoosen = new JFileChooser("c:");
             int choosenOption = fileChoosen.showSaveDialog(null);
-            if(choosenOption===JFileChooser.APPROVE_OPTION){
-                File
+            if(choosenOption==JFileChooser.APPROVE_OPTION){
+                File file = new File(fileChoosen.getSelectedFile().getAbsolutePath()+".txt");
+                    try{
+                        FileWriter fileWriter = new FileWriter(file);
+                        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                        textarea.write(bufferedWriter);
+                        bufferedWriter.close();
+                    }
+                    catch(IOException ioException){
+                        ioException.printStackTrace();
+                    }
             }
         }
 
